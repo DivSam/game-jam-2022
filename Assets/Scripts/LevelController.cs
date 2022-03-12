@@ -38,8 +38,9 @@ public class LevelController : MonoBehaviour
     {
         Transform lastPartTransform = SpawnNewPart(lastEndPosition);
 
-        lastEndPosition = lastPartTransform.Find("Endpoint").position;
+        lastEndPosition = lastPartTransform.Find("Endpoint").position + new Vector3(Random.Range(-2,2),Random.Range(-2,2));
     }
+
     private Transform SpawnNewPart(Vector3 spawnPosition)
     {
         Transform levelPartTransform = Instantiate(subsequentPoint, spawnPosition, Quaternion.identity);
