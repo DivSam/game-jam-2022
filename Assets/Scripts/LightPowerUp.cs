@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class LightPowerUp : PowerUp
 {
-    public float lightMultiplier = 1.5f;
+    public float lightMultiplier = 3f;
     public float duration = 5f;
     public float originalSpotAngle;
-    Light light;
+    Light myLight;
     public override float TriggerConsumableEffect(GameObject player)
     {
-        light = player.GetComponentInChildren<Light>();
-        originalSpotAngle = light.spotAngle;
-        light.spotAngle = originalSpotAngle * 1.5f;
+        myLight = player.GetComponentInChildren<Light>();
+        originalSpotAngle = myLight.spotAngle;
+        myLight.spotAngle = originalSpotAngle * 3f;
+
         return duration;
     }
 
     public override void RemoveConsumableEffect(GameObject player)
     {
-        light.spotAngle = originalSpotAngle;
+        myLight.spotAngle = originalSpotAngle;
     }
-
 }

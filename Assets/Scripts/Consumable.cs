@@ -17,7 +17,12 @@ public class Consumable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.gameObject.GetComponentInChildren<PlayerController>())
+        {
+            return;
+        }
         gameObject.GetComponent<MeshRenderer>().enabled = false;
+        gameObject.GetComponent<Collider>().enabled = false;
         StartCoroutine(TriggerEffectAndWait(other.gameObject));
     }
 

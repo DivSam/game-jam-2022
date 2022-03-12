@@ -48,13 +48,20 @@ public class PlayerController : MonoBehaviour
 
         if (transform.position.y <= -100f)
         {
-            SceneController.Instance.LoadNextScene();
+            Die();
         }
 
         Vector3 diffVector = new Vector3(initPos.x - transform.position.x, initPos.y - transform.position.y, initPos.z - transform.position.z);
         distance = diffVector.magnitude;
+        Debug.Log(GameManager.Instance);
+        GameManager.Instance.playerPos = transform.position;
     }
 
+    public void Die()
+    {
+        GameManager.Instance.SaveScore(distance);
+        SceneController.Instance.LoadNextScene();
+    }
     public float getCurrentDistanceFromSpawn()
     {
         return distance;
