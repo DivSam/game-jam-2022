@@ -41,5 +41,10 @@ public class PlayerController : MonoBehaviour
             yspeed = jumpVelocity;
         }
         rigidBody.velocity = new Vector3(xspeed, yspeed, rigidBody.velocity.z);
+
+        if (transform.position.y <= -20f)
+        {
+            SceneController.Instance.LoadNextScene();
+        }
     }
 }
