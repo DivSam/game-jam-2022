@@ -108,3 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8268a716f979d8458e6c78d4b088c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightMultiplier: 3
+  duration: 5
+  originalSpotAngle: 0

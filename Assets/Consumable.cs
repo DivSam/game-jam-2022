@@ -4,14 +4,28 @@ using UnityEngine;
 
 public class Consumable : MonoBehaviour
 {
-    public virtual void TriggerConsumableEffect(GameObject player)
+    public virtual float TriggerConsumableEffect(GameObject player)
     {
         Debug.Log("Consumable Triggered");
+        return 0;
+    }
+
+    public virtual void RemoveConsumableEffect(GameObject player)
+    {
+        Debug.Log("Consumable Removed");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        TriggerConsumableEffect(other.gameObject);
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        StartCoroutine(TriggerEffectAndWait(other.gameObject));
+    }
+
+    IEnumerator TriggerEffectAndWait(GameObject player)
+    {
+        float duration = TriggerConsumableEffect(player);
+        yield return new WaitForSeconds(duration);
+        RemoveConsumableEffect(player);
         Destroy(gameObject);
     }
 }
