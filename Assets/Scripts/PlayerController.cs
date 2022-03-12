@@ -11,11 +11,15 @@ public class PlayerController : MonoBehaviour
     private bool grounded;
     public float jumpVelocity = 5f;
     public float moveVelocity = 10f;
+
+    private Vector3 initPos;
+    private float distance;
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
+        initPos = transform.position;
 
         grounded = true;
     }
@@ -46,5 +50,13 @@ public class PlayerController : MonoBehaviour
         {
             SceneController.Instance.LoadNextScene();
         }
+
+        Vector3 diffVector = new Vector3(initPos.x - transform.position.x, initPos.y - transform.position.y, initPos.z - transform.position.z);
+        distance = diffVector.magnitude;
+    }
+
+    public float getCurrentDistanceFromSpawn()
+    {
+        return distance;
     }
 }
