@@ -25,6 +25,9 @@ public class FallingStar : MonoBehaviour
         gameObject.GetComponent<Collider>().enabled = false;
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        gameObject.GetComponentInChildren<Light>().enabled = false;
+        gameObject.GetComponent<AudioSource>().Play();
+        gameObject.GetComponentInChildren<ParticleSystem>().Play();
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }

@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     private ContactPoint[] contacts;
 
     private bool grounded;
+    private int timeSinceGrounded = 0;
+
+    public int maxTimeInAirBeforeDeath = 3000;
     public float jumpVelocity = 5f;
     public float moveVelocity = 10f;
 
@@ -26,8 +29,10 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter()
     {
+
         Debug.Log("enter");
         grounded = true;
+        timeSinceGrounded = 0;
     }
 
     void OnCollisionExit()
@@ -38,6 +43,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!grounded) timeSinceGrounded += 1;
         float xspeed = Input.GetAxis("Horizontal") * moveVelocity;
         float yspeed = rigidBody.velocity.y;
         if (Input.GetButtonDown("Jump") && grounded)
@@ -46,10 +52,7 @@ public class PlayerController : MonoBehaviour
         }
         rigidBody.velocity = new Vector3(xspeed, yspeed, rigidBody.velocity.z);
 
-        if (transform.position.y <= -100f)
-        {
-            Die();
-        }
+        if (timeSinceGrounded >= maxTimeInAirBeforeDeath) Die();
 
         Vector3 diffVector = new Vector3(initPos.x - transform.position.x, initPos.y - transform.position.y, initPos.z - transform.position.z);
         distance = diffVector.magnitude;

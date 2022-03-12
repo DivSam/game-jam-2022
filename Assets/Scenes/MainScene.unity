@@ -1393,6 +1393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17a401aa2c0e7e43ad0d29872e5dced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxTimeInAirBeforeDeath: 3000
   jumpVelocity: 50
   moveVelocity: 25.13
 --- !u!1001 &989789578328027243
@@ -1463,14 +1464,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 581867232749626646, guid: 6bd37464ef3095140aac1fe5eadb652c, type: 3}
-      propertyPath: m_Time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 581867232749626646, guid: 6bd37464ef3095140aac1fe5eadb652c, type: 3}
-      propertyPath: m_Parameters.generateLightingData
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2022808131317366921, guid: 6bd37464ef3095140aac1fe5eadb652c, type: 3}
       propertyPath: m_RootOrder
       value: 14
