@@ -8,7 +8,7 @@ public class LevelController : MonoBehaviour
 
     [SerializeField] private Transform startPoint;
 
-    [SerializeField] private Transform subsequentPoint;
+    [SerializeField] private List<Transform> subsequentPointList;
 
     [SerializeField] private Transform player;
 
@@ -36,14 +36,15 @@ public class LevelController : MonoBehaviour
 
     private void SpawnLevelPart()
     {
-        Transform lastPartTransform = SpawnNewPart(lastEndPosition);
+        Transform chosenLevelPart = subsequentPointList[Random.Range(0, subsequentPointList.Count)];
+        Transform lastPartTransform = SpawnNewPart(chosenLevelPart,lastEndPosition);
 
         lastEndPosition = lastPartTransform.Find("Endpoint").position + new Vector3(Random.Range(-2,2),Random.Range(-2,2));
     }
 
-    private Transform SpawnNewPart(Vector3 spawnPosition)
+    private Transform SpawnNewPart(Transform levelPart, Vector3 spawnPosition)
     {
-        Transform levelPartTransform = Instantiate(subsequentPoint, spawnPosition, Quaternion.identity);
+        Transform levelPartTransform = Instantiate(levelPart, spawnPosition, Quaternion.identity);
 
         return levelPartTransform;
 

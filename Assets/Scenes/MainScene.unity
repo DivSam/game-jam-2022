@@ -153,7 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1420010206}
-  subsequentPoint: {fileID: 3060656608733465647, guid: 130b7b58248c21a489078fd46446c296, type: 3}
+  subsequentPointList:
+  - {fileID: 3060656608733465647, guid: 130b7b58248c21a489078fd46446c296, type: 3}
+  - {fileID: 2207020685397195917, guid: 3a625dbb59c4e274f97bf7cf9fce3989, type: 3}
+  - {fileID: 2207020685397195917, guid: 31df7d3736be51b4fae0e76581efc3f5, type: 3}
   player: {fileID: 2098683936}
 --- !u!4 &43929715
 Transform:
@@ -247,7 +250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90072082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.06, z: -6.48}
+  m_LocalPosition: {x: 0, y: 6.06, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -748,7 +751,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420010205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.94, y: 5.31, z: 6.23}
+  m_LocalPosition: {x: 4.94, y: 5.31, z: 0}
   m_LocalScale: {x: 3.7506, y: 3.7506, z: 3.7506}
   m_Children:
   - {fileID: 602989750}
@@ -847,7 +850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098683932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47, y: 5.31, z: 6.23}
+  m_LocalPosition: {x: -0.47, y: 5.31, z: 0}
   m_LocalScale: {x: 3.7506, y: 3.7506, z: 3.7506}
   m_Children:
   - {fileID: 1320284367}

@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         }
         rigidBody.velocity = new Vector3(xspeed, yspeed, rigidBody.velocity.z);
 
-        if (transform.position.y <= -20f)
+        if (transform.position.y <= -100f)
         {
             SceneController.Instance.LoadNextScene();
         }
