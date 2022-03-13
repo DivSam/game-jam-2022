@@ -158,6 +158,10 @@ MonoBehaviour:
   - {fileID: 2207020685397195917, guid: 3a625dbb59c4e274f97bf7cf9fce3989, type: 3}
   - {fileID: 2207020685397195917, guid: 31df7d3736be51b4fae0e76581efc3f5, type: 3}
   - {fileID: 2207020685397195917, guid: 9ac99849447bcfd49b2b3bda79e678fe, type: 3}
+  - {fileID: 2207020685397195917, guid: a64ba100849fa0140b92a8e0f2a1d8ee, type: 3}
+  - {fileID: 2207020685397195917, guid: 5e827802ad4560d4c817f67d8d347ec6, type: 3}
+  - {fileID: 2207020685397195917, guid: 6f8a3201cca90134caf86603339b8bc8, type: 3}
+  - {fileID: 2207020685397195917, guid: f94a6bec0b4cd5542867c48544ee7911, type: 3}
   player: {fileID: 2098683936}
 --- !u!4 &43929715
 Transform:
