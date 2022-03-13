@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
+        bestScore = PlayerPrefs.GetInt("best_score");
         Physics.gravity = new Vector3(0, startingGravity, 0);
         if (instance != null && instance != this)
         {
@@ -43,10 +44,18 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(transform.root);
     }
+    public void SaveAndExit()
+    {
+        PlayerPrefs.SetInt("best_score", (int) bestScore);
+        PlayerPrefs.Save();
+        Application.Quit();
+    }
     public void SaveScore(float score)
     {
         currentScore = score;
         if (score > bestScore) bestScore = score;
+        PlayerPrefs.SetInt("best_score", (int)bestScore);
+        PlayerPrefs.Save();
     }
 
 }

@@ -15,8 +15,13 @@ public class PlayerController : MonoBehaviour
     public float jumpVelocity = 5f;
     public float moveVelocity = 10f;
 
+    public Animator animator;
+    public GameObject model;
     private Vector3 initPos;
     private float distance;
+    private float timeIdle = 0;
+
+    private Light spotLight;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +30,15 @@ public class PlayerController : MonoBehaviour
         initPos = transform.position;
         GameManager.Instance.originalLightColor = GetComponentInChildren<Light>().color;
         GameManager.Instance.originalLightIntensity = GetComponentInChildren<Light>().intensity;
+        model = GameObject.Find("Astronaut Model");
+        animator = GetComponentInChildren<Animator>();
+        spotLight = GetComponentInChildren<Light>();
         grounded = true;
     }
 
     void OnCollisionEnter()
     {
-
+        animator.SetBool("Jumping", false);
         grounded = true;
         timeSinceGrounded = 0;
     }
@@ -44,9 +52,36 @@ public class PlayerController : MonoBehaviour
     {
         if (!grounded) timeSinceGrounded += 1;
         float xspeed = Input.GetAxis("Horizontal") * moveVelocity;
+        if (xspeed > 0)
+        {
+            model.transform.rotation = Quaternion.Euler(0, 90, 0);
+            spotLight.transform.localRotation = Quaternion.Euler(spotLight.transform.rotation.eulerAngles.x, -8, spotLight.transform.rotation.eulerAngles.z);
+        }
+
+        if (xspeed < 0)
+        {
+            model.transform.rotation = Quaternion.Euler(0, 270, 0);
+            spotLight.transform.localRotation = Quaternion.Euler(spotLight.transform.rotation.eulerAngles.x, -25, spotLight.transform.rotation.eulerAngles.z);
+        }
+
+        if (xspeed == 0)
+        {
+            timeIdle++;
+        }
+        if (xspeed != 0)
+        {
+            animator.SetBool("IsRunning", true);
+            timeIdle = 0;
+        }
+
+        if (timeIdle > 10)
+        {
+            animator.SetBool("IsRunning", false);
+        }
         float yspeed = rigidBody.velocity.y;
         if (Input.GetButtonDown("Jump") && grounded)
         {
+            animator.SetBool("Jumping", true);
             yspeed = jumpVelocity;
         }
         rigidBody.velocity = new Vector3(xspeed, yspeed, rigidBody.velocity.z);

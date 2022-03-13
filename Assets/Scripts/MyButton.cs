@@ -13,4 +13,9 @@ public class MyButton : MonoBehaviour
     {
         SceneController.Instance.LoadNextScene();
     }
+
+    public void ExitGame()
+    {
+        GameManager.Instance.SaveAndExit();
+    }
 }

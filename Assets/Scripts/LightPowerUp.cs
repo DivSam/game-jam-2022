@@ -13,7 +13,7 @@ public class LightPowerUp : PowerUp
         myLight = player.GetComponentInChildren<Light>();
         originalSpotAngle = myLight.spotAngle;
         myLight.spotAngle = originalSpotAngle * 3f;
-        player.GetComponentInChildren<Light>().color = new Color(240f/255f, 86f/255f, 88f/255f);
+        //player.GetComponentInChildren<Light>().color = new Color(240f/255f, 86f/255f, 88f/255f);
         player.GetComponentInChildren<Light>().intensity = 10;
 
 
@@ -23,7 +23,7 @@ public class LightPowerUp : PowerUp
     public override void RemoveConsumableEffect(GameObject player)
     {
         myLight.spotAngle = originalSpotAngle;
-        player.GetComponentInChildren<Light>().color = GameManager.Instance.originalLightColor;
+        //player.GetComponentInChildren<Light>().color = GameManager.Instance.originalLightColor;
         player.GetComponentInChildren<Light>().intensity = GameManager.Instance.originalLightIntensity;
 
     }
