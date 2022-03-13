@@ -33,7 +33,7 @@ public class SceneController : MonoBehaviour
     {
         Debug.Log("Failure");
         int idx = SceneManager.GetActiveScene().buildIndex;
-        print(SceneManager.sceneCount);
+        Debug.Log((idx + 1) % (SceneManager.sceneCount + 1));
         SceneManager.LoadScene((idx + 1) % (SceneManager.sceneCount + 1));
     }
 

@@ -4846,7 +4846,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.9670785, b: 0.4764151, a: 1}
+  m_Color: {r: 1, g: 0.9518446, b: 0.19339621, a: 1}
   m_Intensity: 2.03
   m_Range: 20.77
   m_SpotAngle: 30
@@ -4963,7 +4963,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 09ba0b06c640d3945aad071e2f3339d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5036,7 +5036,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 018f6263b66dfe140929a125f8d7b94e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d1ebfa72ced19b64883c5c9dacf658fe, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.108
   m_Pitch: 1
@@ -5046,7 +5046,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 3.8525286
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0

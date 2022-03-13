@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
     private float bestScore = 0;
     private float currentScore = 0;
 
+    public float startingGravity = -50f;
     public Vector3 playerPos;
-
+    public Color originalLightColor;
+    public float originalLightIntensity;
     //public Vector3 PlayerPosition
     //{
    //     get { return playerPos; }
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
+        Physics.gravity = new Vector3(0, startingGravity, 0);
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);

@@ -8,4 +8,9 @@ public class MyButton : MonoBehaviour
     {
         SceneController.Instance.LoadPreviousScene();
     }
+    
+    public void LoadNextScene()
+    {
+        SceneController.Instance.LoadNextScene();
+    }
 }

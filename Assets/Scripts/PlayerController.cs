@@ -23,21 +23,20 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         initPos = transform.position;
-
+        GameManager.Instance.originalLightColor = GetComponentInChildren<Light>().color;
+        GameManager.Instance.originalLightIntensity = GetComponentInChildren<Light>().intensity;
         grounded = true;
     }
 
     void OnCollisionEnter()
     {
 
-        Debug.Log("enter");
         grounded = true;
         timeSinceGrounded = 0;
     }
 
     void OnCollisionExit()
     {
-        Debug.Log("exit");
         grounded = false;
     }
     // Update is called once per frame
@@ -56,7 +55,6 @@ public class PlayerController : MonoBehaviour
 
         Vector3 diffVector = new Vector3(initPos.x - transform.position.x, initPos.y - transform.position.y, initPos.z - transform.position.z);
         distance = diffVector.magnitude;
-        Debug.Log(GameManager.Instance);
         GameManager.Instance.playerPos = transform.position;
     }
 

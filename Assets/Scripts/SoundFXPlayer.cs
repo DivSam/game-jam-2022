@@ -5,8 +5,9 @@ using UnityEngine;
 public class SoundFXPlayer : MonoBehaviour
 {
     AudioSource audioSource;
-    float minDelay = 2f;
-    float range = 10f;
+    public AudioClip[] audioClips;
+    float minDelay = 1f;
+    float range = 1f;
     float pitchChangeMax = 0.2f;
     float volumeChangeMax = 0.3f;
 
@@ -23,7 +24,11 @@ public class SoundFXPlayer : MonoBehaviour
             audioSource.pitch = Random.Range(1 - pitchChangeMax, 1 + pitchChangeMax);
             audioSource.volume = Random.Range(0.7f - volumeChangeMax, 0.7f + volumeChangeMax);
             audioSource.panStereo = Random.Range(-0.5f, 0.5f);
-            audioSource.Play();
+
+            int idx = Random.Range(0, audioClips.Length);
+            Debug.Log("Playing audio clip");
+            Debug.Log(idx);
+            AudioSource.PlayClipAtPoint(audioClips[idx], Vector3.zero);
             yield return new WaitForSeconds(Random.Range(minDelay, minDelay + range));
         }
     }

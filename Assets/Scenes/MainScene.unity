@@ -251,7 +251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90072082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.06, z: -24.3}
+  m_LocalPosition: {x: 0.01, y: 12.3, z: -24.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2098683936}
   smoothSpeed: 0.125
-  offset: {x: 0, y: 0, z: -40}
+  offset: {x: 10, y: 10, z: -40}
 --- !u!1 &169184658
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +397,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd3234beeb95494fb17c1309cac1282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingGravity: -100
   playerPos: {x: 0, y: 0, z: 0}
+  originalLightColor: {r: 0, g: 0, b: 0, a: 0}
+  originalLightIntensity: 0
 --- !u!4 &223345181
 Transform:
   m_ObjectHideFlags: 0
@@ -586,6 +589,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69e0d85ec907f44b897a21d926d9596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: e63b2581ade67aa4ea89a7c17099c2e4, type: 3}
+  - {fileID: 8300000, guid: 012bdbbec42bf794683ac555dcf3089a, type: 3}
 --- !u!82 &1159473384
 AudioSource:
   m_ObjectHideFlags: 0
@@ -706,13 +712,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320284366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000000015892, y: 0, z: -4.689}
+  m_LocalRotation: {x: 0.0369684, y: -0.14547169, z: -0.0054395585, w: 0.9886566}
+  m_LocalPosition: {x: 1.838, y: 0.821, z: -4.689}
   m_LocalScale: {x: 0.72757, y: 0.72757, z: 0.72757}
   m_Children: []
   m_Father: {fileID: 2098683936}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 4.101, y: -16.785, z: -1.236}
 --- !u!108 &1320284368
 Light:
   m_ObjectHideFlags: 0
@@ -918,6 +924,8 @@ MonoBehaviour:
   minXOffset: -44
   maxYOffset: 30
   maxXOffset: 44
+  minShrinkFactor: 0.5
+  maxShrinkFactor: 2
   minYSpeed: -50
   maxYSpeed: -40
   maxXspeed: 20
@@ -988,7 +996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -354.5, y: -191.5}
+  m_AnchoredPosition: {x: -364, y: 237}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1550796465
@@ -1026,8 +1034,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d0047ca64ac13f2489220c91b2d4c6c4, type: 2}
+  m_sharedMaterial: {fileID: -529224707726050303, guid: d0047ca64ac13f2489220c91b2d4c6c4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1470,11 +1478,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2022808131317366921, guid: 6bd37464ef3095140aac1fe5eadb652c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.5
+      value: -26.28
       objectReference: {fileID: 0}
     - target: {fileID: 2022808131317366921, guid: 6bd37464ef3095140aac1fe5eadb652c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.6
+      value: 17.69
       objectReference: {fileID: 0}
     - target: {fileID: 2022808131317366921, guid: 6bd37464ef3095140aac1fe5eadb652c, type: 3}
       propertyPath: m_LocalPosition.z
